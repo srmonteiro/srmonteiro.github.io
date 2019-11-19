@@ -59,7 +59,7 @@
 
   .hero {
     position: relative;
-    height: 720px;
+    height: 600px;
     padding: 20px;
     margin: 0;
     background: black;
@@ -80,6 +80,36 @@
   }
   
   .hero p {
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    animation: subtitle 1.2s forwards linear;
+    animation-delay: 1.2s;
+  }
+
+  .romantic {
+    position: relative;
+    height: 600px;
+    padding: 20px;
+    margin: 0;
+    background: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)), 
+                      url("hero/romantic.jpg");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+  }
+  
+  
+  .romantic h1 {
+    color: white;
+    margin-top: 180px;
+    font-size: 0.1rem;
+    animation: title 1.2s forwards linear;
+  }
+  
+  .romantic p {
     color: white;
     font-size: 2rem;
     opacity: 0;
