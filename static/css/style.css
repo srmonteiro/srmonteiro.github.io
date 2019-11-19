@@ -150,12 +150,11 @@
 
   .yellowandblue {
     position: relative;
-    height: 600px;
+    height: 500px;
     padding: 20px;
     margin: 0;
     background: black;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.5)), 
+    background-image: 
                       url("hero/yellowandblue.png");
     background-attachment: fixed;
     background-position: bottom center;
