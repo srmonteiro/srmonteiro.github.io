@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif;
+  }
+
+/* won't impact code, storing brand HEX CODES */
+  #palatte {
+    dark-blue: #24305E;
+    md-blue: #374785;
+    lgt-blue: #A8D0E6;
+    salmon: #F76C6C;
+    yello: #F8E9A1;    
+  }
+
+/* The styles for NAVIGATION */
+
+  .navbar {
+    padding: 0px;
+    margin: 0;
+    height: 50px;
+    background-color: #24305E;
+    border-radius: 0px;
+  }
+  
+  .navbar:hover {
+      background-color: #24305E;
+      color: #FFFFFF
+    }
+  
+  .navbar-brand {
+      color: white;
+      padding: 15px;
+      margin: 0;
+  
+    }
+  
+  .active{
+    color:#FFFFFF;
+  }
+  
+  .navbar-brand:hover {
+      background-color: #F76C6C;
+      color: #FFFFFF
+    }
+  
+  .dropdown-item {
+      padding-left:10px;
+  }
+  
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 130px;
+    overflow: auto;
+    }
+
+/* The styles for the HERO IMAGE WITH FLY IN */
+
+  .hero {
+    position: relative;
+    height: 720px;
+    padding: 20px;
+    margin: 0;
+    background: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)), 
+                      url("hero/MMB_Ferry_1920.png");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+  }
+  
+  
+  .hero h1 {
+    color: white;
+    margin-top: 180px;
+    font-size: 0.1rem;
+    animation: title 1.2s forwards linear;
+  }
+  
+  .hero p {
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    animation: subtitle 1.2s forwards linear;
+    animation-delay: 1.2s;
+  }
+
+
+  .annielisle {
+    position: relative;
+    height: 600px;
+    padding: 10px;
+    margin: 0;
+    background: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)), 
+                      url("hero/cayuga.jpg");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+  }
+  
+  
+  .annielisle h1 {
+    color: white;
+    margin-top: 180px;
+    font-size: 0.1rem;
+    animation: title 1.2s forwards linear;
+  }
+  
+  .annielisle p {
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    animation: subtitle 1.2s forwards linear;
+    animation-delay: 1.2s;
+  }
+
+  /* keyframe animations which will be used to animate the title */
+@keyframes title {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      font-size: 7.5rem;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes smaller-title {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      font-size: 5.5rem;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes subtitle {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* For Mapbox Leaflet Map */
+
+  #map-id {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .legend {
+    padding: 10px;
+    font-family: Sanchez, serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #555;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .legend .low {
+    color: #ec8a2e;
+  }
+  
+  .legend .empty {
+    color: #a0353a;
+  }
+  
+  .legend .coming-soon {
+    color: #f4ba48;
+  }
+  
+  .legend .healthy {
+    color: #1b904f;
+  }
+  
+  .legend .out-of-order {
+    color: #007dff;
+  }
+
+  .cornell:hover {
+    background-color: #B31B1B; /* Green */
+    color: white;
+  }
+
+  .emory:hover {background-color: #012169; color: white;}
+  .indiana:hover {background-color: #990000; color: white;}
+  .indianastate:hover {background-color: #0142BC; color: white;}
+  .lehigh:hover {background-color: #4B2913; color: white;}
+  .syracuse:hover {background-color: #D44500; color: white;}
+  .akron:hover {background-color: #041E42; color: white;}
+  .alabama:hover {background-color: #9E1B32; color: white;}
+  .georgia:hover {background-color: #0039A6; color: white;}
+  .kansas:hover {background-color: #e8000d; color: white;}
+  .missouri:hover {background-color: #000000; color: white;}
+  .northcarolina:hover {background-color: #7BAFD4; color: white;}
+  .vanderbilt:hover {background-color: #866D4B; color: white;}
+
+  th, td {
+    padding: 10px;
+  }
