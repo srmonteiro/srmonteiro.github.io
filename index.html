@@ -1,156 +1,176 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Monteiro Visualization Portfolio</title>
+<html lang="en"> 
 
-    <!-- Bring in our bootstrap stylesheet -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    
-  
-</head>
-<body class="body" id="page_background">
-        <header class="header">
-        <div class="container-fullwidth">
-            <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">    
-                        <nav class="navbar navbar-dark navbar-expand-lg text-nowrap text-right" style="background-color: #192f53;" >
-                            <a class="navbar-brand" href="index.html">Philanthropx</a>
-                            <div id="navbarSupportedContent">
-                                <ul class="nav navbar-nav text-right">
-                                    <li class="nav-item active text-right">
-                                        <a class="nav-link" href="index.html">Home
-                                            <span class="sr-only">(current)</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item dropdown text-right">
-                                        <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            viz
-                                        </a>
-                                            <div class="dropdown-menu text-muted" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item text-muted" href="latitude.html">latitude</a>
-                                                <a class="dropdown-item text-muted" href="revenue.html">revenue</a>
-                                                <a class="dropdown-item text-muted" href="per_capita.html">per capita</a>
-                                                <a class="dropdown-item text-muted" href="power.html">power</a>
-                                            </div>
-                                    </li>
-                                    
-                                    <li class="nav-item text-right">
-                                        <a class="nav-link text-muted" href="comps.html">comps</a>
-                                    </li>
-                                    </li>
-                                    <li class="nav-item text-right">
-                                        <a class="nav-link text-muted" href="data.html">data</a>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-</header>
-                            
+<!-- HEAD -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Traditions of Alma Maters</title>
+
+                <!-- jQuery -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+                <!-- Leaflet CSS & JS -->
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+                integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+                crossorigin=""/>
+                <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+                integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+                crossorigin=""></script>
+
+
+
+                <!--D3 cdn-->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
         
-        <section class="container section pb-5">  
-            <div class="row justify-content-around">
-                <article class="col-xs-12 col-sm-12 col-md-7 article mt-5"> 
-                        <div class="body_box">
-                        <div class="row"> 
-                            <div class="col-12 border-bottom pt-3">
-                                <h1>Seeing like a Foundation</h1> 
-                            </div>
-                        
-                            <div class="col-12 pt-3">
-                                <img src="images/philanthropic_directions.png" width="60%" alt="Philanthropy Organization Revenue by Latitude" title="Philanthropy Organization Revenue by Latitude" class="img-fluid float-left image"/>
-                                    <p>This portfolio includes a set of data visualiztions created 
-                                        as a part of a data science bootcamp. While the website will 
-                                        need updates if it will ever serve as a public portfolio, 
-                                        I hope you enjoy my analysis of IRS 990 records (2017) will prove 
-                                        interseting, at least visually. I ambititously (or more accurately precociously)
-                                        set out to investigate a set of APIs, though the way I went about my project
-                                        meant looping through a lot of calls, and I got blocked!
-                                    </p>
-                                    <p>In the meantime, I'll present some agreggate data on philanthropic entities
-                                        in the US, based on IRS Nonprofit financial records. The one above is a 
-                                        riff on a weather data query (temp by latitude), but instead, the total
-                                        revenue of individual Philanthropic Organizations by Latitude of incorporation. 
-                                        While it might look like there's a slight trend toward revenue and  
-                                        philanthropic activity clusters around 40 degrees, you're mostly seeing
-                                        where large cities are in the US.
-                                        </p>
-                              <hr></hr>
-                                <p class ="pt-4">Reviewing the rest of the site, you will find visualizations for: 
-                                        </p>
-                                    <ul>
-                                        <li>Philanthropy Organization Revenue by Latitude</li>
-                                        <li>Philanthropic Organizations by Revenue Bracket</li>
-                                        <li>Philanthropy Revenue by State</li>
-                                        <li>A measure I term Philanthropic 'Power' by State</li>
-                                    </ul>
-                                <p>Also included in this dashboard are descriptions of observable trends based on the data. </p>
-                            </div>
-                        </div>
+                <!-- BOOTSTRAP // CSS --> 
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="static/css/style.css">
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
                     
-                    </div>
-                </article>
+                <!-- jQuery -->
+                <script   src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
+        
+                <!-- Mabpox GL -->
+                <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.js'></script>
+                <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.css' rel='stylesheet'>
+        
+                <!-- Mapbox.js (fallback) -->
+                <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+                <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+        
+                <!-- GeoViewport -->
+                <script src='//api.tiles.mapbox.com/mapbox.js/plugins/geo-viewport/v0.1.1/geo-viewport.js'></script>
 
-                <aside class="col-xs-12 col-sm-12 col-md-4 aside mt-5 pb-3 align-self-start">  
-                        
-                            <div class="row">
-                                    <div class="body_box">
+    </head>
 
-                                            <div class="col-12 border-bottom pt-3">
-                                    <h1>Visualizations</h1>
-                                            </div>
-                                
+<!-- BODY --> 
+
+    <body class="body">
+
+ <!-- HEADER NAV MENU BAR -->
+ <header class="header">
+    <div class="container-fullwidth">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <nav class="navbar navbar-dark fixed-top navbar-expand-lg text-right"" >
+                    
+                    <!-- LANDING PAGE // LOGO -->
+                    <a class="navbar-brand active" href="#">ALma Maters</a>
+                    <div id="navbarSupportedContent">
+                        <ul class="nav navbar-nav text-right">
+
+                            <!-- LANDING PAGE // INDEX.HOME -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="#">Home<span class="sr-only">(current)</span>
+                                </a>
+                            </li>
                             
-                                <div class ="contact-info col-12 pt-3 d-flex justify-content-around"> 
-                                    
-                                    <div class = "row">
-                                        <a href="latitude.html">
-                                            <img src="images/philanthropic_directions.png" alt="Philanthropy Organization Revenue by Latitude" title="Philanthropy Organization Revenue by Latitude" width="80%" class="image"/>
-                                        </a>
+                            <!-- REPORT GENERATED FROM FLASK QUERY -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="static/templates/romanticroots.html">Romantic Roots</a>
+                            </li>
+                            </li>
 
-                                        <a href="per_capita.html">
-                                                <img src="images/phil_rev_state.png" alt="Philanthropic Revenue by State" title="Philanthropy Organization Revenue by State" width="80%" class="image"/>
-                                        </a>
-                                        
+                             <!-- Featured Queries -- Back-up if live data processes to slowly for the demo -->
+                             <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="static/templates/yellowandblue.html">The Yellow and Blue</a>
+                            </li>
+                            
+                            <!-- TEMPLATES TAB // PRESENTATION -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="static/templates/annielisle.html">Annie Lisle</a>
+                            </li>
+
+                            <!-- TEMPLATES TAB // ABOUT US -->
+                            <li class="nav-item text-right">
+                                    <a class="nav-link text-muted" href="static/templates/conclusion.html">Conclusion</a>
+                                </li>
+
+                            <!-- TEMPLATES TAB // PRESENTATION -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="static/templates/submit.html">Submit</a>
+                            </li>
+
+                            <!-- TEMPLATES DROPDOWN // STILL FIGURING OUT WHAT WE MIGHT NEED -->
+                            
+                            <!-- <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Data Walkthrough
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item text-muted" href="../acs_notebook">ACS 5-Year</a><br>
+                                        <a class="dropdown-item text-muted" href="../fec_notebook">FEC Donor Data</a><br>
+                                        <a class="dropdown-item text-muted" href="../mysql_db">MySQL Database</a><br>
+                                        <a class="dropdown-item text-muted" href="../aws_db">AWS BigQuery</a><br>
                                     </div>
-                                    <div class = "row">
-                                            <a href="revenue.html">
-                                                    <img src="images/nonprofits_by_income.png" alt="Philanthropic Organizations by Revenue Bracket" title="Philanthropic Organizations by Revenue Bracket" width="80%" class="image"/>
-                                            </a>
-                                        <a href="power.html">
-                                                <img src="images/phil_by_rev.png" alt="Philanthropic Power by State" title="Philanthropic Power by State" width="80%" class="image"/>
-                                        </a>
-                                        </div>
-                                        
+                                    </li> -->
                                     
-                               
-                            </div>
-                        </div>
+
+                            
+                        </ul>       
                     </div>
-                    </aside>
+                </nav>   
             </div>
-            <!-- all images by Stephen Monteiro -->
-        </section>
+        </div>
+    </div>
+    <!-- WITH HERO BANNER INSTEAD OF MAP -->
+
+    <div class="row">
+        <div class="hero text-center">
+        
+                <h1>Alma Mater Traditions</h1>
+                <p>On the Origins of the Most Important Fight Songs of All Time</p>
+        
+        </div>
     </div>
 
+    <div class="container-fluid">
+        
+        <div class="row" style="height:720px">
+        
+            <div class="col-lg-1 col-md-1 col-sm-1"> 
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10"> 
+                <h1 style="padding-top:40px">Alma Mater Traditions</h1>
+                <p>On the Origins of the Most Important Fight Songs of All Time</p>
+                    <div class="container" style="padding:100px;">
+                        <h2 style="text-align:center">This is some TED Talk Minimalism</h2>
+                        <p style="text-align:center">This is what my project seeks to accomplish</h2>
+                    </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1"> 
+            </div>
+        
+        </div>
+    </div>
+    <div class="container-fluid">
+        
+            <div class="row" style="height:720px;background-color: #24305E">
+            
+                <div class="col-lg-1 col-md-1 col-sm-1"> 
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10"> 
+                    <h1 style="padding-top:40px; color:white">Alma Mater Traditions</h1>
+                    <p style="color:white">On the Origins of the Most Important Fight Songs of All Time</p>
+                        <div class="container" style="padding:100px; color:white">
+                            <h2 style="text-align:center">This is some TED Talk Minimalism</h2>
+                            <p style="text-align:center">This is what my project seeks to accomplish</h2>
+                        </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1"> 
+                </div>
+            
+            </div>
+        </div>
+
+
+</header>
 
 </body>
-
-<footer>
-        <div id="footer-strip"></div>
-          I did a thing. Stephen Monteiro 2019 (c) Copywrite Coding Bootcamp 2017
-      </footer>
-
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-      
-
 </html>
