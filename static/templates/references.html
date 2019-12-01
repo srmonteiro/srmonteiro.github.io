@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<!-- HEAD -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Traditions of Alma Maters</title>
+
+        <link rel="icon" src="../images/favicon.png" sizes="16x16" type="image/png">
+
+                <!-- jQuery -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+                <!-- Leaflet CSS & JS -->
+                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+                crossorigin=""/>
+
+                <!-- Make sure you put this AFTER Leaflet's CSS -->
+                <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+                integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+                crossorigin=""></script>
+
+
+                <!--D3 cdn-->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+        
+                <!-- BOOTSTRAP // CSS --> 
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="../css/style.css">
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                    
+                <!-- jQuery -->
+                <script   src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
+        
+                <!-- Mabpox GL -->
+                <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.js'></script>
+                <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.17.0/mapbox-gl.css' rel='stylesheet'>
+        
+                <!-- Mapbox.js (fallback) -->
+                <script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+                <link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
+        
+                <!-- GeoViewport -->
+                <script src='//api.tiles.mapbox.com/mapbox.js/plugins/geo-viewport/v0.1.1/geo-viewport.js'></script>
+
+    </head>
+
+<!-- BODY --> 
+
+    <body class="body">
+
+ <!-- HEADER NAV MENU BAR -->
+ <header class="header">
+    <div class="container-fullwidth">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <nav class="navbar navbar-dark fixed-top navbar-expand-lg text-right"" >
+                    
+                    <!-- LANDING PAGE // LOGO -->
+                    <a class="navbar-brand" href="../../index.html">Alma Maters</a>
+                    <div id="navbarSupportedContent">
+                        <ul class="nav navbar-nav text-right">
+
+                            <!-- LANDING PAGE // INDEX.HOME -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="../../index.html">Home<span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            
+                            <!-- REPORT GENERATED FROM FLASK QUERY -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="romanticroots.html">Romantic Roots</a>
+                            </li>
+
+                             <!-- Featured Queries -- Back-up if live data processes to slowly for the demo -->
+                             <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="yellowandblue.html">The Yellow and Blue</a>
+                            </li>
+                            
+                            <!-- TEMPLATES TAB // PRESENTATION -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="annielisle.html">Annie Lisle</a>
+                            </li>
+                            <!-- TEMPLATES TAB // ABOUT US -->
+                            <li class="nav-item text-right">
+                                    <a class="nav-link text-muted" href="conclusion.html">Conclusion</a>
+                                </li>
+                            <!-- TEMPLATES TAB // PRESENTATION -->
+                            <li class="nav-item text-right">
+                                <a class="nav-link text-muted" href="submit.html">Submit</a>
+                            </li>
+ 
+                        </ul>       
+                    </div>
+                </nav>   
+            </div>
+        </div>
+    </div>
+    <!-- WITH HERO BANNER INSTEAD OF MAP -->
+</header>
+   
+        <div class="container-fluid">
+        
+                <div class="row" style="background-color: #FFFFFF">
+                
+                    <div class="col-lg-1 col-md-1 col-sm-1"> 
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10"> 
+                                <h1 style="padding-right:75px;padding-left:75px;padding-top:75px;" >Websites Referenced</h1>
+                                <h3 style="padding-right:75px;padding-left:75px;padding-bottom:75px;padding-top:15px"><a href="http://www.library.ncat.edu/resources/archives/almamater.html " target="_blank">http://www.library.ncat.edu/resources/archives/almamater.html </a></br></br>
+                                    <a href="http://archives.yalealumnimagazine.com/issues/99_12/old_yale.html " target="_blank">http://archives.yalealumnimagazine.com/issues/99_12/old_yale.html </a></br></br>
+                                    <a href="http://badgerband.com/varsity/ " target="_blank">http://badgerband.com/varsity/ </a></br></br>
+                                    <a href="http://calband.berkeley.edu/media/cal-songs/ " target="_blank">http://calband.berkeley.edu/media/cal-songs/ </a></br></br>
+                                    <a href="http://emoryhistory.emory.edu/customs/commencement/alma-mater.html " target="_blank">http://emoryhistory.emory.edu/customs/commencement/alma-mater.html </a></br></br>
+                                    <a href="http://fightmusic.com/lyrics/acc_syracuse.html " target="_blank">http://fightmusic.com/lyrics/acc_syracuse.html </a></br></br>
+                                    <a href="http://www.fresnostate.edu/folklore/ballads/EM348.html " target="_blank">http://www.fresnostate.edu/folklore/ballads/EM348.html </a></br></br>
+                                    <a href="http://www.sgsosu.net/osu/songs/carmen_ohio.html " target="_blank">http://www.sgsosu.net/osu/songs/carmen_ohio.html </a></br></br>
+                                    <a href="http://www.songsofyale.com/b " target="_blank">http://www.songsofyale.com/b </a></br></br>
+                                    <a href="https://125.stanford.edu/hail-stanford-hail-extreme-weather-hits-farm/ " target="_blank">https://125.stanford.edu/hail-stanford-hail-extreme-weather-hits-farm/ </a></br></br>
+                                    <a href="https://abook.sa.ua.edu/ua-traditions/history/alma-mater/ " target="_blank">https://abook.sa.ua.edu/ua-traditions/history/alma-mater/ </a></br></br>
+                                    <a href="https://alumni.georgetown.edu/alumni-association/fight-song-alma-mater " target="_blank">https://alumni.georgetown.edu/alumni-association/fight-song-alma-mater </a></br></br>
+                                    <a href="https://alumni.msu.edu/stay-informed/story.cfm?id=573 " target="_blank">https://alumni.msu.edu/stay-informed/story.cfm?id=573 </a></br></br>
+                                    <a href="https://commencement.duke.edu/commencement-information/memorabilia-traditions/alma-mater/ " target="_blank">https://commencement.duke.edu/commencement-information/memorabilia-traditions/alma-mater/ </a></br></br>
+                                    <a href="https://commencement.duke.edu/wp-content/uploads/2018/01/university-alma-mater-dear-old-duke.pdf " target="_blank">https://commencement.duke.edu/wp-content/uploads/2018/01/university-alma-mater-dear-old-duke.pdf </a></br></br>
+                                    <a href="https://cuse.com/sports/2010/8/18/GEN_0818103320.aspx " target="_blank">https://cuse.com/sports/2010/8/18/GEN_0818103320.aspx </a></br></br>
+                                    <a href="https://gameday.nd.edu/traditions/notre-dame-music/alma-mater/ " target="_blank">https://gameday.nd.edu/traditions/notre-dame-music/alma-mater/ </a></br></br>
+                                    <a href="https://givingto.msu.edu/joshua-davis-shadows.cfm " target="_blank">https://givingto.msu.edu/joshua-davis-shadows.cfm </a></br></br>
+                                    <a href="https://harvardmagazine.com/2018/05/alma-mater-updated " target="_blank">https://harvardmagazine.com/2018/05/alma-mater-updated </a></br></br>
+                                    <a href="https://iuhoosiers.com/sports/2015/4/1/GEN_2014010160.aspx " target="_blank">https://iuhoosiers.com/sports/2015/4/1/GEN_2014010160.aspx </a></br></br>
+                                    <a href="https://kuinfo.ku.edu/what-are-words-alma-mater " target="_blank">https://kuinfo.ku.edu/what-are-words-alma-mater </a></br></br>
+                                    <a href="https://kuinfo.ku.edu/what-are-words-alma-mater " target="_blank">https://kuinfo.ku.edu/what-are-words-alma-mater </a></br></br>
+                                    <a href="https://library.syr.edu/digital/guides_sua/html/sua_stevens_j.htm " target="_blank">https://library.syr.edu/digital/guides_sua/html/sua_stevens_j.htm </a></br></br>
+                                    <a href="https://library.unc.edu/music/uncsongs/ " target="_blank">https://library.unc.edu/music/uncsongs/ </a></br></br>
+                                    <a href="https://livethearmstrong.com/lsu-alma-mater/ " target="_blank">https://livethearmstrong.com/lsu-alma-mater/ </a></br></br>
+                                    <a href="https://michigantoday.umich.edu/2013/05/21/a8617/ " target="_blank">https://michigantoday.umich.edu/2013/05/21/a8617/ </a></br></br>
+                                    <a href="https://news.miami.edu/stories/2017/10/alma-mater-stand-forever.html " target="_blank">https://news.miami.edu/stories/2017/10/alma-mater-stand-forever.html </a></br></br>
+                                    <a href="https://oniowa.uiowa.edu/content/school-songs " target="_blank">https://oniowa.uiowa.edu/content/school-songs </a></br></br>
+                                    <a href="https://paw.princeton.edu/article/lyrics-old-nassau-brought-date " target="_blank">https://paw.princeton.edu/article/lyrics-old-nassau-brought-date </a></br></br>
+                                    <a href="https://pittnews.com/article/29655/archives/alma-mater/ " target="_blank">https://pittnews.com/article/29655/archives/alma-mater/ </a></br></br>
+                                    <a href="https://princetoniana.princeton.edu/traditions/performing-arts/songs/old-nassau " target="_blank">https://princetoniana.princeton.edu/traditions/performing-arts/songs/old-nassau </a></br></br>
+                                    <a href="https://princetoniana.princeton.edu/traditions/performing-arts/songs/old-nassau " target="_blank">https://princetoniana.princeton.edu/traditions/performing-arts/songs/old-nassau </a></br></br>
+                                    <a href="https://publicdomainreview.org/collections/on-the-banks-of-the-old-raritan-1915/ " target="_blank">https://publicdomainreview.org/collections/on-the-banks-of-the-old-raritan-1915/ </a></br></br>
+                                    <a href="https://purplereaction.blogspot.com/2009/10/northwestern-university-hymn-alma-mater.html " target="_blank">https://purplereaction.blogspot.com/2009/10/northwestern-university-hymn-alma-mater.html </a></br></br>
+                                    <a href="https://rbscp.lib.rochester.edu/1816 " target="_blank">https://rbscp.lib.rochester.edu/1816 </a></br></br>
+                                    <a href="https://theblacksheeponline.com/michigan-state/alma-mater-adjusted " target="_blank">https://theblacksheeponline.com/michigan-state/alma-mater-adjusted </a></br></br>
+                                    <a href="https://umdarchives.wordpress.com/2015/09/10/umds-most-recognizable-songs-part-i-hail-alma-mater/ " target="_blank">https://umdarchives.wordpress.com/2015/09/10/umds-most-recognizable-songs-part-i-hail-alma-mater/ </a></br></br>
+                                    <a href="https://welcome.uga.edu/spirit-101.html " target="_blank">https://welcome.uga.edu/spirit-101.html </a></br></br>
+                                    <a href="https://www.brown.edu/Administration/News_Bureau/Databases/Encyclopedia/search.php?serial=A0170 " target="_blank">https://www.brown.edu/Administration/News_Bureau/Databases/Encyclopedia/search.php?serial=A0170 </a></br></br>
+                                    <a href="https://www.chicagotribune.com/news/ct-xpm-1990-11-15-9004040577-story.html " target="_blank">https://www.chicagotribune.com/news/ct-xpm-1990-11-15-9004040577-story.html </a></br></br>
+                                    <a href="https://www.contemplator.com/wales/harlech.html " target="_blank">https://www.contemplator.com/wales/harlech.html </a></br></br>
+                                    <a href="https://www.dartmouth.edu/~library/rauner/dartmouth/alma_mater.html " target="_blank">https://www.dartmouth.edu/~library/rauner/dartmouth/alma_mater.html </a></br></br>
+                                    <a href="https://www.indstate.edu/about/history-and-traditions " target="_blank">https://www.indstate.edu/about/history-and-traditions </a></br></br>
+                                    <a href="https://www.mizzou.com/s/1002/alumni/interior.aspx?sid=1002&gid=1001&pgid=323 " target="_blank">https://www.mizzou.com/s/1002/alumni/interior.aspx?sid=1002&gid=1001&pgid=323 </a></br></br>
+                                    <a href="https://www.mizzou.com/s/1002/alumni/interior.aspx?sid=1002&gid=1001&pgid=323 " target="_blank">https://www.mizzou.com/s/1002/alumni/interior.aspx?sid=1002&gid=1001&pgid=323 </a></br></br>
+                                    <a href="https://www.ndsu.edu/history_traditions/ " target="_blank">https://www.ndsu.edu/history_traditions/ </a></br></br>
+                                    <a href="https://www.nytimes.com/2017/04/07/us/harvard-alma-mater-contest.html " target="_blank">https://www.nytimes.com/2017/04/07/us/harvard-alma-mater-contest.html </a></br></br>
+                                    <a href="https://www.psu.edu/ur/about/almamater.html " target="_blank">https://www.psu.edu/ur/about/almamater.html </a></br></br>
+                                    <a href="https://www.psu.edu/ur/about/almamater.html " target="_blank">https://www.psu.edu/ur/about/almamater.html </a></br></br>
+                                    <a href="https://www.rochester.edu/aboutus/symbols.html " target="_blank">https://www.rochester.edu/aboutus/symbols.html </a></br></br>
+                                    <a href="https://www.rutgers.edu/about/traditional-songs " target="_blank">https://www.rutgers.edu/about/traditional-songs </a></br></br>
+                                    <a href="https://www.stanforddaily.com/2010/10/10/hail-stanford%E2%80%A6fail/ " target="_blank">https://www.stanforddaily.com/2010/10/10/hail-stanford%E2%80%A6fail/ </a></br></br>
+                                    <a href="https://www.syracuse.edu/about/history/traditions/ " target="_blank">https://www.syracuse.edu/about/history/traditions/ </a></br></br>
+                                    <a href="https://www.texasexes.org/about-us/history-and-traditions/eyes-texas " target="_blank">https://www.texasexes.org/about-us/history-and-traditions/eyes-texas </a></br></br>
+                                    <a href="https://www.thestate.com/entertainment/local-events/article168900147.html " target="_blank">https://www.thestate.com/entertainment/local-events/article168900147.html </a></br></br>
+                                    <a href="https://www.uakron.edu/traditions/songs.dot " target="_blank">https://www.uakron.edu/traditions/songs.dot </a></br></br>
+                                    <a href="https://www.umd.edu/history-and-mission/traditions/maryland-alma-mater " target="_blank">https://www.umd.edu/history-and-mission/traditions/maryland-alma-mater </a></br></br>
+                                    <a href="https://www.unc.edu/about/history-and-traditions/ " target="_blank">https://www.unc.edu/about/history-and-traditions/ </a></br></br>
+                                    <a href="https://www.uww.edu/150/alma-mater-lyrics-contest " target="_blank">https://www.uww.edu/150/alma-mater-lyrics-contest </a></br></br>
+                                    <a href="https://www.vanderbilt.edu/commencement/archives/alma-mater.php " target="_blank">https://www.vanderbilt.edu/commencement/archives/alma-mater.php </a></br></br>
+                                    <a href="https://www1.lehigh.edu/about-hallmarks-traditions-alma-mater " target="_blank">https://www1.lehigh.edu/about-hallmarks-traditions-alma-mater </a></br></br>
+                                    <a href="https://www2.ljworld.com/news/2015/aug/23/song-jayhawks/ " target="_blank">https://www2.ljworld.com/news/2015/aug/23/song-jayhawks/ </a></br></br>
+                                    <a href="" target="_blank"></a></br></br>
+                                    <a href="" target="_blank"></a></br></br></h3>
+                            
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1"> 
+                    </div>
+                
+                </div>
+            </div>
+
+           
+
+
+    
+
+
+
+</body>
+
+
+   <!-- Footer -->
+   <footer class="page-footer font-small stylish-color-dark pt-4" style="background:#374785;">
+
+        <!-- Footer Links -->
+        <div class="container text-lg-left text-md-left">
+      
+          <!-- Grid row -->
+          <div class="row">
+      
+            <!-- Grid column -->
+            <div class="col-md-12 mx-auto" style="color:#FFFFFF;padding-top:25px">
+      
+              <!-- Content -->
+            
+              <!-- <u>References</u> </br>
+              Kurtz, Benjamin Putnam. <em>Charles Mills Gayley</em>. Berkeley: University of California Press, 1943.</br></br>
+              Preston, Katherine K. <em>Opera for the People: English-language Opera and Women Managers in Late 19th-century America</em>. United States: Oxford University Press, 2017.</br></br>
+              Tyldesley, William. <em>Michael William Balfe: His Life and His English Operas</em>. Music in 19th-Century Britain. Aldershot, Hants, England: Ashgate, 2003.</br></br>
+                 -->
+            </div>
+            <!-- Grid column -->
+      
+      
+        <!-- Copyright -->
+        <div class="footer-copyright text-left py-3" style="color:#FFFFFF;padding-left:15px"> <p>Kari Lindquist 2019 © </p> 
+        </div>
+        <!-- Copyright -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+      </footer>
+
+
+</html>
